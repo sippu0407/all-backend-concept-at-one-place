@@ -13,6 +13,18 @@ class TweetRepo{
     }
  }
 
+
+ async getTweetWithComment(id){
+
+   try {
+    
+    const tweet=await Tweet.findById(id).populate('comments');
+    return tweet;}
+     catch(error){
+        console.log(error);
+    }
+ }
+
   async get(id){
 
    try {const tweet=await Tweet.findById(id);
