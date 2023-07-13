@@ -8,7 +8,13 @@ const tweetSchema=new mongoose.Schema({
     },
     userEmail:{
         type:String
-    }
+    },
+    comments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Comment'
+        }
+    ]
 });
 
 const Tweet=mongoose.model('Tweet',tweetSchema);
